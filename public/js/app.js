@@ -1,5 +1,5 @@
 
-class TimersDashboard extends Component {
+class TimersDashboard extends React.Component {
   render() {
     return (
       <div className="ui three column centered grid">
@@ -137,3 +137,8 @@ class Timer extends React.Component {
     );
   }
 }
+
+ReactDOM.render(
+  <TimersDashboard />,
+  document.getElementById('content')
+);
