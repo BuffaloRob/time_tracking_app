@@ -84,6 +84,11 @@ class EditableTimer extends React.Component {
 }
 
 class TimerForm extends React.Component {
+  state = {
+    title: this.props.title || '',
+    project: this.props.project || '',
+  };
+  
   render() {
     const submitText = this.props.title ? 'Update' : 'Create'
     return (
@@ -121,16 +126,19 @@ class ToggleableTimerForm extends React.Component {
   handleFormOpen = () => {
     this.setState({ isOpen: true });
   };
-  
+
   render() {
-    if (this.props.isOpen) {
+    if (this.state.isOpen) {
       return (
         <TimerForm />
       );
     } else {
       return (
         <div className='ui basic content center aligned segment'>
-          <button className='ui basic button icon'>
+          <button 
+            className='ui basic button icon'
+            onClick={this.handleFormOpen}
+          >
             <i className='plus icon' />
           </button>
         </div>
