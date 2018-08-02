@@ -55,6 +55,7 @@ class TimersDashboard extends React.Component {
         <div className="column">
           <EditableTimerList 
             timers={this.state.timers}
+            onFormSubmit={this.handleEditFormSubmit}
           />
           <ToggleableTimerForm 
             isOpen={true}
